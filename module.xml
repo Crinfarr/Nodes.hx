@@ -1,0 +1,9 @@
+<module id="Nodes">
+    <components>
+        <class name="haxe.ui.nodes.Nodes.NodeContainer"/>
+        <class name="haxe.ui.nodes.Nodes.Node"/>
+    </components>
+    <resources>
+        <resource path="/haxe/ui/nodes/node-assets" prefix="assets"/>
+    </resources>
+</module>
