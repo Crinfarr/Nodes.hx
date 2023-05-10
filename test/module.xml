@@ -4,6 +4,6 @@
         <class name="haxe.ui.nodes.Nodes.Node"/>
     </components>
     <resources>
-        <resource path="/haxe/ui/nodes/node-assets" prefix="assets"/>
+        <resource path="haxe/ui/nodes/node_assets" prefix="assets"/>
     </resources>
 </module>

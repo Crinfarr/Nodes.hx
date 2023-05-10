@@ -73,23 +73,17 @@ private class NodeProperty extends HBox {
     public function setDataType(type:NodeInputType) {
         switch (type) {
             case StringInput:
-                this.box.resource = "assets/_internal/box_String.png";
-                this.box.autoSize();
+                this.box.resource = "assets/box_String.png";
             case IntInput:
-                this.box.resource = "assets/_internal/box_Int.png";
-                this.box.autoSize();
+                this.box.resource = "assets/box_Int.png";
             case ColorInput:
-                this.box.resource = "assets/_internal/box_RGB.png";
-                this.box.autoSize();
+                this.box.resource = "assets/box_RGB.png";
             case ColorAlphaInput:
-                this.box.resource = "assets/_internal/box_RGB.png";
-                this.box.autoSize();
+                this.box.resource = "assets/box_RGB.png";
             case BytesInput:
-                this.box.resource = "assets/_internal/box_Bin.png";
-                this.box.autoSize();
+                this.box.resource = "assets/box_Bin.png";
             case RawInput:
-                this.box.resource = "assets/_internal/box_Any.png";
-                this.box.autoSize();
+                this.box.resource = "assets/box_Any.png";
             default: null;
         }
     }
