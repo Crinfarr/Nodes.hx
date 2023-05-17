@@ -1,0 +1,19 @@
+{
+    "name": "hxnodes",
+    "contributors": [
+        "Crinfarr"
+    ],
+    "dependencies": {
+        "haxeui-core":""
+    },
+    "license": "GPL",
+    "releasenote": "Very beta (does nothing)",
+    "url": "https://github.com/Crinfarr/Nodes.hx",
+    "version": "0.0.1",
+    "tags": [
+        "UI",
+        "Nodes",
+        "Tools"
+    ],
+    "classPath": "."
+}
