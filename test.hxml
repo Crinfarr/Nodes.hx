@@ -1,5 +1,0 @@
---library haxeui-core
---library haxeui-html5
--cp test
---main Main
---js bin/test/main.js
