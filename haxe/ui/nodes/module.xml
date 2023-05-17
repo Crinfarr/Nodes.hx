@@ -1,7 +1,7 @@
-<module id="Nodes">
+<module id="hxnodes" priority="0">
     <components>
-        <class name="haxe.ui.nodes.Nodes.NodeContainer"/>
-        <class name="haxe.ui.nodes.Nodes.Node"/>
+        <class name="haxe.ui.nodes.Node"/>
+        <class name="haxe.ui.nodes.NodeContainer"/>
     </components>
     <resources>
         <resource path="haxe/ui/nodes/node_assets" prefix="assets"/>
