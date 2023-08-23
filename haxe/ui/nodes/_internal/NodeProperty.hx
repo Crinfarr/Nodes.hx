@@ -1,13 +1,21 @@
 package haxe.ui.nodes._internal;
 
 import haxe.ui.containers.HBox;
-import haxe.ui.components.Label;
-import haxe.ui.components.Image;
 import haxe.ui.nodes._internal.enums.NodeInputType;
+import haxe.ui.nodes._internal.NodeBox;
+import haxe.ui.nodes._internal.NodeLabel;
 
 class NodeProperty extends HBox {
-	public var label:Label;
-	public var box:Image;
+	public var label:NodeLabel;
+	public var box:NodeBox;
+
+	@:isVar public var scale(get, set):Float = 1;
+	private function get_scale():Float {
+		return scale;
+	}
+	private function set_scale(val:Float):Float {
+		return (scale = val);
+	}
 
 	var nodeInputType:NodeInputType;
 
@@ -16,11 +24,11 @@ class NodeProperty extends HBox {
 		this.autoWidth = true;
 		this.autoHeight = true;
 
-		this.box = new Image();
+		this.box = new NodeBox();
 		this.box.width = 16;
 		this.box.height = 16;
 
-		this.label = new Label();
+		this.label = new NodeLabel();
 		this.label.autoWidth = true;
 		this.label.autoHeight = true;
 		this.label.color = "#ffffff";
