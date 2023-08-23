@@ -1,2 +1,2 @@
---library haxeui-core
---library haxeui-blank
+-L haxeui-core
+-L haxeui-blank
