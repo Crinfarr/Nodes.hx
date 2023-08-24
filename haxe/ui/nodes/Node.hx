@@ -2,25 +2,25 @@ package haxe.ui.nodes;
 
 import haxe.ui.components.Label;
 import haxe.ui.containers.VBox;
-import haxe.ui.components.Canvas;
 import haxe.ui.nodes._internal.NodeProperty;
 import haxe.ui.nodes._internal.enums.NodeInputType;
 import haxe.ui.nodes._internal.Scalable;
 
-class Node extends Scalable<VBox> {
+@testCall
+class Node extends VBox implements Scalable {
 	public var properties:Array<NodeProperty>;
 	public var name:Label;
-	@:isVar public var scale(get, set):Float = 1;
-	private function get_scale():Float {
-		return scale;
-	}
-	private function set_scale(val:Float):Float {
-		scale = val;
-		for (property in this.properties) {
-			property.scale = scale;
-		}
-		return scale;
-	}
+	// @:isVar public var scale(get, set):Float = 1;
+	// private function get_scale():Float {
+	// 	return scale;
+	// }
+	// private function set_scale(val:Float):Float {
+	// 	scale = val;
+	// 	for (property in this.properties) {
+	// 		property.scale = scale;
+	// 	}
+	// 	return scale;
+	// }
 
 	public function new(n:String) {
 		super();
