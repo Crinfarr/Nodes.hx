@@ -1,11 +1,7 @@
 package haxe.ui.nodes;
 
-import haxe.ui.util.Variant;
-import haxe.ui.styles.Style;
 import haxe.ui.core.Component;
 import haxe.ui.events.UIEvent;
-import haxe.ui.validation.InvalidationFlags;
-import haxe.ui.components.Image;
 import haxe.ui.components.Canvas;
 import haxe.ui.events.MouseEvent;
 
