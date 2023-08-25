@@ -4,9 +4,8 @@ import haxe.ui.components.Label;
 import haxe.ui.containers.VBox;
 import haxe.ui.nodes._internal.NodeProperty;
 import haxe.ui.nodes._internal.enums.NodeInputType;
-import haxe.ui.nodes._internal.Scalable;
+import haxe.ui.nodes.helpers.Scalable;
 
-@testCall
 class Node extends VBox implements Scalable {
 	public var properties:Array<NodeProperty>;
 	public var name:Label;
