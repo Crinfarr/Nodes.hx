@@ -1,21 +1,14 @@
 package haxe.ui.nodes._internal;
 
+import haxe.ui.nodes.helpers.Scalable;
 import haxe.ui.containers.HBox;
 import haxe.ui.nodes._internal.enums.NodeInputType;
 import haxe.ui.nodes._internal.NodeBox;
 import haxe.ui.nodes._internal.NodeLabel;
 
-class NodeProperty extends HBox {
+class NodeProperty extends HBox implements Scalable {
 	public var label:NodeLabel;
 	public var box:NodeBox;
-
-	@:isVar public var scale(get, set):Float = 1;
-	private function get_scale():Float {
-		return scale;
-	}
-	private function set_scale(val:Float):Float {
-		return (scale = val);
-	}
 
 	var nodeInputType:NodeInputType;
 
