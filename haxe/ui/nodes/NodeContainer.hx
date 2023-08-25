@@ -34,6 +34,9 @@ class NodeContainer extends Canvas {
 	@:bind(this, MouseEvent.MOUSE_WHEEL)
 	private function mWheelZoom(e:MouseEvent) {
 		this.scale += (0.01 * e.delta);
+		for (node in nodes) {
+			node.scale == scale;
+		}
 	}
 
 	override public function addComponent(c:Component):Component {
@@ -50,6 +53,6 @@ class NodeContainer extends Canvas {
 
 	@:bind(this, UIEvent.COMPONENT_ADDED)
 	private function nodeAdded(e:UIEvent) {
-		trace(e);
+		// trace(e);
 	}
 }
