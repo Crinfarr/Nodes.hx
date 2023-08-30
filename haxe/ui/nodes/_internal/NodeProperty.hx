@@ -25,6 +25,7 @@ class NodeProperty extends HBox implements Scalable {
 		this.label.autoWidth = true;
 		this.label.autoHeight = true;
 		this.label.color = "#ffffff";
+		this.label.style.fontSize = this.label.height;
 
 		this.addComponent(this.box);
 		this.addComponent(this.label);
