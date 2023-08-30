@@ -1,15 +1,11 @@
 package haxe.ui.nodes._internal;
 
-import haxe.macro.Type.ClassType;
 #if macro
 import haxe.macro.Context;
 import haxe.macro.Expr.Field;
-import haxe.macro.Expr.Access;
-import haxe.rtti.Meta;
-import haxe.macro.Compiler;
-
-// import haxe.ui.core.Component;
+import haxe.macro.Type.ClassType;
 #end
+
 class Macros {
 	macro function applyScalable():Array<Field> {
 		var isComponent = false;
@@ -43,6 +39,39 @@ class Macros {
 			access: [APrivate],
 			pos: Context.currentPos(),
 			kind: FVar(macro :Null<Float>, macro null)
+		});
+
+		/**
+		 * Separate scalable children
+		 */
+		fields.push({
+			name: 'scalableChildren',
+			access: [APrivate],
+			kind: FVar(macro :Array<Scalable>, {
+				expr: EArrayDecl([]),
+				pos: Context.currentPos()
+			}),
+			pos: Context.currentPos(),
+		});
+
+		fields.push({
+			name: 'addComponent',
+			access: [AOverride, APublic],
+			kind: FFun({
+				args: [
+					{
+						name: 'component',
+						type: (macro :haxe.ui.core.Component)
+					}
+				],
+				expr: macro {
+					if (Std.isOfType(component, Scalable)) {
+						scalableChildren.push(untyped component);
+					}
+					return super.addComponent(component);
+				}
+			}),
+			pos: Context.currentPos(),
 		});
 
 		/**
@@ -86,14 +115,16 @@ class Macros {
 				ret: (macro :Float),
 				expr: macro {
 					scale = value;
+					if (baseWidth == null)
+						baseWidth = width;
+					if (baseHeight == null)
+						baseHeight = height;
 					super.set_width(baseWidth * scale);
 					super.set_height(baseHeight * scale);
-					
-					for (component in this.childComponents.filter((e) -> {
-						haxe.rtti.Meta.getType(Type.getClass(e)).scalable != null;
-					})) {
-						trace('scaling');
-						component.scale = scale;
+					this.customStyle.fontSize = 13 * scale;
+					this.invalidateComponentStyle();
+					for (child in scalableChildren) {
+						child.scale = scale;
 					}
 					return scale;
 				}
