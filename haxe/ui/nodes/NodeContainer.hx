@@ -35,7 +35,7 @@ class NodeContainer extends Canvas {
 	private function mWheelZoom(e:MouseEvent) {
 		this.scale += (0.01 * e.delta);
 		for (node in nodes) {
-			node.scale == scale;
+			node.scale = scale;
 		}
 	}
 
